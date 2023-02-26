@@ -29,14 +29,18 @@ class MyDrawer extends Drawer {
                 const SizedBox(
                   height: 6,
                 ),
-                InkWell(
-                    child: const Text(
-                      'View Profile',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 101, 100, 100)),
-                    ),
-                    onTap: () {}),
+                Builder(builder: (context) {
+                  return InkWell(
+                      child: const Text(
+                        'View Profile',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 101, 100, 100)),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/profile');
+                      });
+                }),
                 const SizedBox(
                   height: 20,
                 ),

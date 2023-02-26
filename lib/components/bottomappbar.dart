@@ -10,24 +10,28 @@ class MyBottomAppBar extends BottomAppBar {
         children: [
           SizedBox.fromSize(
             size: const Size(82, 50),
-            child: InkWell(
-              splashColor: Colors.blue,
-              onTap: () {},
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.home,
-                    color: Color.fromARGB(255, 116, 115, 115),
-                  ), // <-- Icon
-                  Text("Home",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color:
-                              Color.fromARGB(255, 116, 115, 115))), // <-- Text
-                ],
-              ),
-            ),
+            child: Builder(builder: (context) {
+              return InkWell(
+                splashColor: Colors.blue,
+                onTap: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.home,
+                      color: Color.fromARGB(255, 116, 115, 115),
+                    ), // <-- Icon
+                    Text("Home",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(
+                                255, 116, 115, 115))), // <-- Text
+                  ],
+                ),
+              );
+            }),
           ),
           SizedBox.fromSize(
             size: const Size(82, 50),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:linkedin_clone/pages/home.dart';
 import 'package:linkedin_clone/pages/profile.dart';
+import 'package:linkedin_clone/pages/home.dart';
 
 void main() {
   runApp(const MyApp());

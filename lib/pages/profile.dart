@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../components/appbar.dart';
-import '../components/bottomappbar.dart';
 import '../components/drawer.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -17,9 +16,29 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 194, 190, 190),
-      drawer: const MyDrawer(),
-      appBar: MyAppBar(),
-      bottomNavigationBar: const MyBottomAppBar(),
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: const IconThemeData(
+            color: Colors.black, //change your color here
+          ),
+          title: Container(
+            width: double.infinity,
+            height: 40,
+            decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 224, 229, 234),
+                borderRadius: BorderRadius.circular(5)),
+            child: Center(
+              child: TextField(
+                decoration: InputDecoration(
+                    labelText: "Trafalgar D.Water Law",
+                    prefixIcon: IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed: () {},
+                    ),
+                    border: InputBorder.none),
+              ),
+            ),
+          )),
       body: ListView(
         children: [
           //Section 1 of the profile page containing the pictures and some basic
@@ -31,13 +50,15 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Stack(
                   children: [
-                    // The bottom image
+// The bottom image
+
                     Image(
                       fit: BoxFit.cover,
                       height: 150,
                       width: MediaQuery.of(context).size.width,
                       image: const AssetImage('assets/Linux.jpg'),
                     ),
+
                     const SizedBox(
                       height: 180,
                     ),
@@ -99,7 +120,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 backgroundColor: const MaterialStatePropertyAll(
                                     Color.fromARGB(255, 7, 79, 214)),
                                 minimumSize: MaterialStateProperty.all(
-                                    const Size(150, 25)),
+                                    const Size(150, 35)),
                                 shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
@@ -118,7 +139,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 backgroundColor: const MaterialStatePropertyAll(
                                     Colors.white),
                                 minimumSize: MaterialStateProperty.all(
-                                    const Size(150, 25)),
+                                    const Size(150, 35)),
                                 shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(

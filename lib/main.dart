@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Linkedin Clone',
       routes: {
         "/": (context) => const MyHomePage(title: 'Home Page'),
         "/profile": (context) => const ProfilePage(title: 'Profile Page')
